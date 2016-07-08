@@ -1,0 +1,37 @@
+.band-content-top-container {
+  @include clear();
+  .span-left, .span-right {
+    display: inline-block;
+    vertical-align: bottom;
+  }
+  .span-left {
+    width: 340px;
+    text-align: right;
+    margin-right: 55px;
+  }
+  .span-right {
+    width: 600px;
+  }
+}
+
+.container {
+  width: 95%;
+  position: relative;
+}
+
+.centered-container {
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.home-hero {
+  @include clear();
+  width: 780px;
+  margin: 0 auto;
+  .hero-container,
+  .home-playButton {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}

@@ -1,0 +1,58 @@
+<section class="band-container" ng-show="finalist" ng-class="{isLoaded: finalist}">
+  <div class="band__full-image-container">
+    <div class="band__full-image-bg" style="background-image: url('{{finalist.bandImage.url}}');" ng-class="{isDimmed: showFullBiography}">
+      <div class="play-button" ng-click="showVideo = ! showVideo"></div>
+      <div class="band__video" ng-if="showVideo" ng-bind-html="videoTag"></div>
+    </div>
+
+    <ul class="band__members">
+      <li ng-repeat="finalistName in finalistNames">{{ finalistName }}</li>
+    </ul>
+
+    <div class="band-content-top-container" ng-hide="showVideo">
+      <aside class="span-left">
+        <h2 class="band__name">{{ finalistBandName }}</h2>
+        <h3 class="band__genre">{{ finalist.ville }}</h3>
+        <vote-button idVote="{{finalistID}}"></vote-button>
+        <div class="band__icons-wrapper">
+          <a ng-if="finalist.soundcloud" ng-href="{{finalist.soundcloud}}" target="_blank"><i class="icon-soundcloud"></i></a>
+          <a ng-if="finalist.instagram" ng-href="{{finalist.instagram}}" target="_blank"><i class="icon-instagram-yellow"></i></a>
+          <a ng-if="finalist.facebook" ng-href="{{finalist.facebook}}" target="_blank"><i class="icon-facebook-yellow"></i></a>
+        </div>
+        <div class="below-container">
+          <a href="#/" class="_link-dash band__back-link">← Retour</a>
+        </div>
+      </aside>
+
+      <div class="span-right">
+        <div class="band__biography">
+          <p ng-bind-html="finalistBiography[0]"></p>
+          <p ng-bind-html="finalistBiography[1]" class="band__full-biography" ng-class="{isDeployed: showFullBiography}"></p>
+          <a ng-show="finalistBiography[1]" href="" ng-click="showFullBiography = ! showFullBiography;">{{showFullBiography ? 'Cacher la suite' : 'Lire la suite'}}</a>
+        </div>
+      </div>
+    </div>
+
+    <a href="" ng-show="showVideo" ng-click="showVideo = false" class="_link-dash video__close-link">Fermer la vidéo</a>
+
+    <span class="band__scroll" ng-class="{isFaded: hasScrolled}">
+      Scroll
+    </span>
+  </div>
+
+
+  <article class="band-content-container centered-container">
+    <div class="band-content__top">
+      <div class="band__soundcloud-feature">
+        <div class="soundcloud-player" ng-bind-html="soundcloudPlayer"></div>
+      </div>
+      <div class="band__itw" ng-bind-html="itwTag">
+
+      </div>
+    </div>
+
+    <div class="band__gallery">
+      <div gallery pictures="finalist.gallerie_photo"></div>
+    </div>
+  </article>
+</section>

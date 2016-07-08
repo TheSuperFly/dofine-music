@@ -1,0 +1,17 @@
+.bx-viewport {
+  height: inherit !important;
+}
+.bxslider {
+  img {
+    max-width: 100%;
+  }
+}
+
+.bx-prev,
+.bx-next {
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.bx-next {
+  float: right;
+}

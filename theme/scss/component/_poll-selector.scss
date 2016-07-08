@@ -1,0 +1,84 @@
+@keyframes CardAreFadingIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.isLoaded {
+  .poll__card {
+    animation: CardAreFadingIn .2s;
+    animation-fill-mode: forwards;
+    @for $i from 1 through 4 {
+      &:nth-child(#{$i}) {
+        animation-delay: (.05 * $i) + s;
+      }
+    }
+  }
+}
+
+.poll-container {
+  @include clear();
+  height: 90%; width: 90%;
+  &.isFacebookLoaded .poll__card:hover {
+    background: #0A0;
+  }
+  .poll__card {
+    text-align: center;
+    width: 50%; height: 50%;
+    float: left;
+    box-sizing: border-box;
+    overflow: hidden;
+    opacity: 0;
+    .bg {
+      background: center/cover no-repeat;
+      transform: scale(1);
+      transition: transform .2s; }
+    &:hover .poll__content {
+      opacity: 1; }
+    &:hover .bg {
+      transform: scale(1.1); }
+  }
+}
+
+.poll__content {
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, .5);
+  position: relative;
+  z-index: 9;
+  opacity: 0;
+  transition: opacity .2s;
+  display: flex;
+  align-items: center;
+  .poll__inner {
+    width: 100%;
+  }
+  .poll-content__ville {
+    font-size: 9pt;
+    text-transform: uppercase;
+    color: #CCC;
+  }
+  h3 {
+    font-size: 36px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 25px 0 35px;
+    &::before,
+    &::after {
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+      border-bottom: 1px solid #FFF;
+      margin: 0 20px;
+      width: 10%;
+    }
+  }
+  .poll-content__btns {
+    .btn {
+      display: inline-block;
+      margin-right: 10px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

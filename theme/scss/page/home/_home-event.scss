@@ -1,0 +1,63 @@
+.home-event {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__head-title {
+    h2 {
+      font-size: 14px;
+      span {
+        display: block;
+        background: url('../img/logo-broken-back.png') right/contain no-repeat;
+        max-width: 604px;
+        height: 25px;
+        margin: 15px 0 0 auto;
+        font-size: 0;
+      }
+    }
+  }
+
+  &__content {
+    margin: 44px 0;
+    position: relative;
+    p {
+      max-width: 385px;
+      margin: 20px 0 0 auto;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 70px;
+      border-bottom: 1px solid $yellow;
+      position: absolute;
+      right: -90px;
+      top: 15px;
+    }
+  }
+}
+
+/* Special Overrides */
+
+.home-event {
+  .home__cta-block {
+    a {
+      margin-bottom: 10px;
+      float: right;
+      margin-left: 22px;
+    }
+    span {
+      float: right;
+      white-space: pre-line;
+      display: block;
+      width: 100%;
+    }
+  }
+  .home__sideTitle.right {
+    top: -20%;
+  }
+  .inner {
+    width: calc(100% - 355px);
+    text-align: right;
+    position: relative;
+  }
+}

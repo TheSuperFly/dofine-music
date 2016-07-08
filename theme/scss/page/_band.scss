@@ -1,0 +1,190 @@
+.band-container {
+  height: 100%;
+}
+
+.band__full-image-container {
+  position: relative;
+  height: 100%;
+  @include clear();
+  .band__full-image-bg {
+    position: relative;
+    width: 95%;
+    height: 90%;
+    max-width: 1151px;
+    float: right;
+    background: center/cover no-repeat;
+    opacity: 1;
+    transition: opacity 1s ease-out;
+    overflow: hidden;
+    .band__video {
+      position: relative;
+      z-index: 9999;
+      width: 100%;
+      height: 100%;
+      iframe {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .band__members {
+    position: absolute;
+    top: 0;
+    right: 0;
+    list-style: none;
+    text-align: right;
+    &::after {
+      content: "";
+      display: block;
+      width: 50px;
+      height: 1px;
+      border-bottom: 1px solid #fff02a;
+      position: absolute;
+      right: 0;
+      top: 50%;
+    }
+    li {
+      padding-right: 65px;
+    }
+  }
+}
+
+.band-content-top-container {
+  position: absolute;
+  bottom: 10px;
+  .band__genre {
+    font-size: 12pt;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin: 30px 0px;
+  }
+  .band__name {
+    font-size: 34pt;
+    color: $yellow;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin: 0;
+    &::after {
+      content: "";
+      display: block;
+      position: relative;
+      top: 10px;
+      border-bottom: 1px solid $yellow;
+      width: 100%;
+    }
+  }
+  .band__vote-btn {
+    min-width: 68px;
+  }
+  .band__icons-wrapper {
+    margin-top: 24px;
+    a {
+      display: inline-block;
+      text-align: right;
+      margin-right: 10px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  .band__biography {
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 60px;
+    text-shadow: 0px 1px 0px #000;
+    position: relative;
+    bottom: 60px;
+    p {
+      margin: 0;
+    }
+    .band__full-biography {
+      height: 0;
+      overflow: hidden;
+      &.isDeployed {
+        height: 100%;
+      }
+    }
+  }
+  .below-container {
+    position: relative;
+    .band__back-link {
+      float: left;
+      margin-left: 65px;
+      text-transform: uppercase;
+      font-weight: 300;
+    }
+  }
+}
+
+.band__scroll {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  text-transform: uppercase;
+  height: 90px;
+  width: 60px;
+  margin: 0 auto;
+  opacity: 1;
+  transition: opacity .2s;
+  &::after {
+    content: "";
+    display: block;
+    height: 60px;
+    border-left: 1px solid #FFF;
+    width: 1px;
+    margin: 20px auto;
+  }
+  &.isFaded {
+    opacity: 0;
+  }
+}
+
+.video__close-link {
+  float: right;
+  margin-right: 5px;
+}
+
+.band-content-container {
+  .band-content__top {
+    margin-top: 5em;
+    width: 100%;
+    display: block;
+    .band__soundcloud-feature {
+      width: 48%;
+      display: inline-block;
+    }
+    .band__itw {
+      width: 48%;
+      margin-left: 2%;
+      height: 450px;
+      display: inline-block;
+      iframe {
+        width: 100%; height: 100%;
+      }
+    }
+  }
+  .band__gallery {
+    margin-top: 20px;
+    .bx-controls {
+      margin: 10px 0 30px;
+    }
+  }
+}
+
+
+.isLoaded {
+  .band__full-image-bg {
+    opacity: 1;
+  }
+}
+
+.band__full-image-bg {
+  &.isDimmed {
+    opacity: .55;
+    .play-button::after {
+      visibility: hidden;
+    }
+  }
+}

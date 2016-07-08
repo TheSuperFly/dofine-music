@@ -1,0 +1,82 @@
+.home-contact {
+  &__top-container {
+    &::before {
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+      border-bottom: 1px solid $yellow;
+      width: 71px;
+      margin-right: 20px;
+    }
+    p {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+  &__form {
+    @include clear();
+    float: right;
+    position: relative;
+    top: 100px;
+    h3 {
+      font-size: 60px;
+      position: absolute;
+      color: #fff02a;
+      text-transform: uppercase;
+      opacity: .08;
+      margin: 0px;
+      top: -20px;
+      left: -100px;
+    }
+    input:not([type=submit]), textarea {
+      background: 0 0;
+      border-top: 0;
+      border-left: 0; border-right: 0;
+      border-bottom: 1px solid #FFF;
+      width: 100%;
+      font-size: 16px;
+      padding-bottom: 10px;
+      &:focus {
+        outline: 0;
+      }
+    }
+    textarea {
+      background: url('../img/contact-textarea.png');
+      line-height: 41px;
+      height: 180px;
+      background-position-y: 39px;
+      resize: none;
+      border-bottom: 0;
+      padding: 0;
+    }
+    input[type=submit] {
+      float: right;
+      &:hover {
+        color: $yellow;
+      }
+    }
+    .wpcf7-form {
+      position: relative;
+    }
+    .wpcf7-formlabel {
+      position: absolute;
+      left: -90px;
+      width: 70px;
+      text-align: right;
+      line-height: 54px;
+      text-transform: uppercase;
+    }
+    .wpcf7-textarea__wrapper {
+      overflow: scroll;
+      height: 190px;
+    }
+  }
+}
+
+/* Special Override */
+
+.home-contact {
+  .inner {
+    width: calc(100% - 176px);
+  }
+}

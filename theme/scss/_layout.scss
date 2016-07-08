@@ -1,0 +1,70 @@
+.main-header {
+  @include clear();
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  right: 0;
+}
+
+@keyframes LogoIsBouncing {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(.9);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.main-header__logo {
+  width: 100%;
+  padding: 15px 0;
+  ._image-logo {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    left: 2.5%;
+    background: url(../img/logo.png) left/cover no-repeat;
+    width: 133px;
+    height: 38px;
+    transition: width .2s;
+    &.isCollapsed {
+      width: 37px;
+    }
+    &:active {
+      animation: LogoIsBouncing .2s linear;
+    }
+  }
+}
+
+.main-header__social {
+  position: absolute;
+  right: 0;
+  top: 0;
+  line-height: 73px;
+  a {
+    display: inline-block;
+    margin-right: 15px;
+    opacity: .3;
+    transition: opacity .2s;
+    &:last-child {
+      margin-right: 0;
+    }
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.poll-viewport,
+.band-viewport {
+  padding-top: 69px;
+  &._viewport {
+    height: calc(100% - 72px);
+  }
+}

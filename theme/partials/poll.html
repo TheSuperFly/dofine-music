@@ -1,0 +1,22 @@
+<h4 class="poll__side-words">fin des votes : 25 Mars 2016</h4>
+
+<section class="poll-container row" ng-class="{isLoaded: bands}">
+  <div ng-repeat="band in bands" class="poll__card card-{{band.slug}}">
+    <span class="bg" style="background-image: url('{{band.acf.bandImage.url}}')"></span>
+    <div class="poll__content">
+      <div class="poll__inner">
+        <span class="poll-content__ville" ng-bind="band.acf.ville"></span>
+        <h3 ng-bind="band.title.rendered"></h3>
+        <div class="poll-content__btns">
+          <a ng-href="#/votes/finaliste/{{band.slug}}" class="btn">En savoir plus</a>
+          <vote-button idVote="{{band.id}}"></vote-button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="poll-footer centered-container">
+  <a href="#/" class="back-link _link-dash">← Retour</a>
+  <h2>Finalistes</h2>
+</footer>

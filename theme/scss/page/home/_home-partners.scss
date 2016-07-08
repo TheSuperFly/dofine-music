@@ -1,0 +1,19 @@
+.home-partners {
+  padding: 20px 0;
+  &__container {
+    position: relative;
+  }
+  &__logo-container {
+  	list-style: none;
+  	padding: 0;
+  	text-align: center;
+  	li {
+  		display: inline-block;
+		  margin: 34px;
+  	}
+  }
+  &__mailLine {
+  	margin-top: 75px;
+  	text-align: center;
+  }
+}

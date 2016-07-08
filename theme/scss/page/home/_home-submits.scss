@@ -1,0 +1,47 @@
+.home-submits {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__row {
+    display: block;
+    margin-bottom: 40px;
+    text-align: right;
+  }
+  &__date,
+  &__content {
+    display: inline-block;
+    vertical-align: top;
+  }
+  &__date {
+    width: 24%;
+    max-width: 150px;
+    position: relative;
+    span {
+      color: $yellow;
+      font-size: 30px;
+      display: block;
+      margin-right: 20px;
+      text-align: left;
+    }
+    &::after {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      width: 51px;
+      border-bottom: 1px solid #fff02a;
+      top: 50%;
+      right: 0;
+      transition: width 1s cubic-bezier(0, .75, 0, 1);
+    }
+  }
+  &__content {
+    width: 74%;
+    max-width: 380px;
+    text-align: right;
+    font-weight: 300;
+    font-size: 14px;
+  }
+  .home__cta-block {
+    text-align: right;
+  }
+}
